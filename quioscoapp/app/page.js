@@ -1,27 +1,21 @@
+
 import Image from 'next/image'
-import { PrismaClient } from '@prisma/client'
+import React, { use  } from "react";
 
-export default function Home({categorias}) {
+const getCategories = async () => {
+  const data = await fetch("http://localhost:3000/api/categories")
+  const categories = data.json()
+  return categories
+}
 
- console.log(categorias)
+
+export default async function Home() {
+  let categories = await getCategories()
 
   return (
-    <h1>App Next</h1>
+    <div>{categories.map((categorie)=>(<h2>{categorie.nombre}</h2>))}</div>
   )
 }
 
-export const getServerSideProps = async() => {
-
-  const prisma = new PrismaClient()
-
-  const categorias = await prisma.categoria.findMany()
-
-  return {
-    props:{
-      categorias
-    }
-  }
-
-}
 
 
