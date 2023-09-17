@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { QuioscoProvider } from "./context/QuioscoProvider"
+import { QuioscoProvider } from "../context/QuioscoProvider"
 
 const inter = Inter({ subsets: ['latin'] })
 
