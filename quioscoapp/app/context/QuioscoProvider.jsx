@@ -6,6 +6,7 @@ const QuioscoContext = createContext()
 
 const QuioscoProvider = ({children}) => {
 
+    return(
     <QuioscoContext.Provider
         value={{
 
@@ -14,7 +15,7 @@ const QuioscoProvider = ({children}) => {
         {children}
     </QuioscoContext.Provider>
 
-}
+)}
 
 
 export {
