@@ -9,7 +9,7 @@ function Categoria({categoria}) {
     const { nombre, icono, id } = categoria
 
   return (
-    <div className={`${categoriaActual?.id === id ? 'bg-amber-400' : ''}flex items-center gap-4 border p-5 hover:bg-amber-400`}>
+    <div className={`flex items-center gap-4 border p-5 hover:bg-amber-400 ${categoriaActual?.id === id ? "bg-amber-400" : "" }`}>
       <Image
         width={70}
         height={70}
