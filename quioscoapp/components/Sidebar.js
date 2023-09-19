@@ -10,7 +10,7 @@ function Sidebar() {
 
   return (
     <>
-        <Image width={300} height={100} src="/assets/img/logo.svg" alt="imagen logotipo"/>
+        <Image width={300} height={100} src="/assets/img/logo.svg" alt="imagen logotipo" priority={true} />
         <var className="mt-10" >
           {categorias.map( categoria => (
             <Categoria
