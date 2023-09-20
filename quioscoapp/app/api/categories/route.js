@@ -7,7 +7,11 @@ export async function GET() {
     
     const prisma = new PrismaClient()
 
-    const categorias = await prisma.categoria.findMany()
+    const categorias = await prisma.categoria.findMany({
+      include: {
+        productos: true,
+      }
+    })
 
   return NextResponse.json(categorias)
 }
