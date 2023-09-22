@@ -43,6 +43,7 @@ export default function Layout({children, pagina}){
             <Modal
                 isOpen={modal}
                 style={customStyles}
+                ariaHideApp={false}
             >
                <ModalProducto />
             </Modal>

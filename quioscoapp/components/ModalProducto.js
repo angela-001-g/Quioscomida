@@ -5,7 +5,7 @@ import { useState } from "react"
 
 function ModalProducto() {
 
-  const { producto, handleChangeModal } = useQuiosco()
+  const { producto, handleChangeModal, handleAgregarPedido } = useQuiosco()
   const [ cantidad, setCantidad ] = useState(1)
 
   return (
@@ -35,7 +35,8 @@ function ModalProducto() {
                 {formatearDinero(producto.precio)}
             </p>
 
-            <div className="flex gap-4 mt-5" > 
+            <div className="flex gap-4 mt-5" >
+
               <button
                 type="button"
                 onClick={() => {
@@ -62,7 +63,16 @@ function ModalProducto() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </button>
+
             </div>
+
+            <button
+              type="button"
+              className="bg-indigo-600 hover:bg-indigo-800 px-5 py-2 mt-5 text-white font-bold uppercase rounded"
+              onClick={() => handleAgregarPedido({...producto, cantidad})}
+            >
+                Añadir al pedido
+            </button>    
 
         </div>
     </div>
