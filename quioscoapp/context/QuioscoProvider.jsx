@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 const QuioscoContext = createContext()
 
 const QuioscoProvider = ({children}) => {
-
+ 
     const[categorias, setCategorias] = useState([])
     const[categoriaActual, setCategoriaActual] = useState({})
     const[producto, setProducto] = useState({})

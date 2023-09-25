@@ -8,11 +8,11 @@ const pasos = [
 ]
 
 function Pasos() {
-    const{ handleChangePaso } = useQuiosco()
+    const{ handleChangePaso, paso } = useQuiosco()
     const router = useRouter()
 
     const calcularProgreso = () => {
-        const porcentaje = (router.pathname / 3 *100)
+        const porcentaje = (paso / 3 *100)
         return porcentaje
     }
 
