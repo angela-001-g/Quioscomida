@@ -23,6 +23,7 @@ function ModalProducto() {
             <Image
               width={300}
               height={400}
+              style={{ width: 300, height: 'auto' }}
               alt={`imagen producto ${producto.nombre}`}
               src={`/assets/img/${producto.imagen}.jpg`}
             />

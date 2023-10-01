@@ -64,6 +64,12 @@ const QuioscoProvider = ({children}) => {
         setPaso(paso)
     }
 
+    const handleEditarCantidades = id => {
+        const productoActualizar = pedido.filter( producto => producto.id === id )
+        setProducto(productoActualizar[0])
+        setModal(!modal)
+    }
+
     return(
     <QuioscoContext.Provider
         value={{
@@ -77,7 +83,8 @@ const QuioscoProvider = ({children}) => {
            handleAgregarPedido,
            pedido,
            handleChangePaso, 
-           paso
+           paso, 
+           handleEditarCantidades
         }}
     >
         {children}
