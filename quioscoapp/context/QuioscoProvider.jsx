@@ -9,12 +9,13 @@ const QuioscoContext = createContext()
 
 const QuioscoProvider = ({children}) => {
  
-    const[categorias, setCategorias] = useState([])
-    const[categoriaActual, setCategoriaActual] = useState({})
-    const[producto, setProducto] = useState({})
-    const[modal, setModal] = useState(false)
-    const[pedido, setPedido] = useState([])
-    const[paso, setPaso] = useState(1)
+    const [categorias, setCategorias] = useState([])
+    const [categoriaActual, setCategoriaActual] = useState({})
+    const [producto, setProducto] = useState({})
+    const [modal, setModal] = useState(false)
+    const [pedido, setPedido] = useState([])
+    const [paso, setPaso] = useState(1)
+    const [nombre, setNombre] = useState('')
 
     const router = useRouter()
 
@@ -95,6 +96,8 @@ const QuioscoProvider = ({children}) => {
            paso, 
            handleEditarCantidades,
            handleEliminarProducto, 
+           nombre, 
+           setNombre
         }}
     >
         {children}
