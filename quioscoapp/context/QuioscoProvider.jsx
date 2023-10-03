@@ -88,7 +88,14 @@ const QuioscoProvider = ({children}) => {
 
     const colocarOrden = async (e) => {
         e.preventDefault()
-        console.log('Enviando ordeen...')
+        // Pasa los datos pedido orden y total como un objeto
+        try {
+           const {data} = await axios.post('/api/orders', {nombre, pedido, total})
+           console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     return(
