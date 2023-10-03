@@ -35,7 +35,7 @@ const QuioscoProvider = ({children}) => {
     }, [])
 
     useEffect(() => {
-        const nuevoTotal = pedido.reduce((total, producto) => (producto.precio * producto.cantidad) + total, 0)
+        const nuevoTotal = pedido.reduce((total, producto) => Number(((producto.precio * producto.cantidad) + total).toFixed(2)), 0)
         setTotal(nuevoTotal)
     }, [pedido])
 
@@ -90,7 +90,7 @@ const QuioscoProvider = ({children}) => {
         e.preventDefault()
         // Pasa los datos pedido orden y total como un objeto
         try {
-           const {data} = await axios.post('/api/orders', {nombre, pedido, total})
+           const {data} = await axios.post('/api/orders', {nombre, pedido, total, fecha: Date.now().toString()})
            console.log(data)
         } catch (error) {
             console.log(error)
