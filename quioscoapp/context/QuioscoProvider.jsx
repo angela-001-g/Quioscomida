@@ -90,8 +90,19 @@ const QuioscoProvider = ({children}) => {
         e.preventDefault()
         // Pasa los datos pedido orden y total como un objeto
         try {
-           const {data} = await axios.post('/api/orders', {nombre, pedido, total, fecha: Date.now().toString()})
-           console.log(data)
+            await axios.post('/api/orders', {nombre, pedido, total, fecha: Date.now().toString()})
+            // Resetear la app
+            setCategoriaActual(categorias[0])
+            setPedido([])
+            setNombre('')
+            setTotal(0)
+
+            toast.success('Pedido realizado correctamente')
+
+            setTimeout(() => {
+                 router.push('/')
+            }, 3000)
+
         } catch (error) {
             console.log(error)
         }
