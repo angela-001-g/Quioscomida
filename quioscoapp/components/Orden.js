@@ -1,5 +1,6 @@
 import Image from "next/image"
 import axios from 'axios'
+import { toast } from "react-toastify"
 import { formatearDinero } from "../helpers"
 
 function Orden({orden}) {
@@ -7,7 +8,8 @@ function Orden({orden}) {
 
     const completarOrden = async () => {
         try {
-            await axios.post(`/api/blog/${id}`, {})
+           await axios.post(`/api/blog/${id}`, {})
+           toast.success('Orden Lista')
         } catch (error) {
             console.log(error)
         }
