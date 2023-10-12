@@ -8,7 +8,7 @@ export default function Admin() {
 
     const fetcher = () => axios('/api/orders').then(datos => datos.data)
 
-    const { data, error, isLoading } = useSWR('/api/orders', fetcher)
+    const { data, error, isLoading } = useSWR('/api/orders', fetcher, {refreshInterval: 100})
 
     // console.log(data)
     // console.log(error)
